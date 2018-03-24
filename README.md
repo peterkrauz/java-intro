@@ -1,2 +1,2 @@
 # sohqualidade
-a maça do eden do vale do silicio #obrigado
+a maçã do eden do vale do silicio #obrigado
