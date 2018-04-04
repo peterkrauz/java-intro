@@ -22,8 +22,8 @@ public class Track {
 			System.out.print("");
 		}
 		System.out.println();
-		for (int line = 0; line < lizards.length; line++){
-			for (int column = 0; column < length; column++) {
+		for (int line = 0; line < length; line++){
+			for (int column = 0; column < track.length; column++) {
 				System.out.print((line == column ? "  o" : "  x") + "\t");
 			}
 			System.out.println("\n");
