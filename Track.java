@@ -23,7 +23,7 @@ public class Track {
 		}
 		System.out.println();
 		for (int line = 0; line < lizards.length; line++){
-			for (int column = 0; column < track.length; column++) {
+			for (int column = 0; column < length; column++) {
 				System.out.print((line == column ? "  o" : "  x") + "\t");
 			}
 			System.out.println("\n");
