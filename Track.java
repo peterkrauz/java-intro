@@ -1,88 +1,56 @@
 package quonadrensal;
-
-public class Track extends Race{
-	public int[][] track = new int [20][5];
-	
-	public Track(){
-		nullTrack();
+public class Track {
+    public int[] track;
+    public Lizard[] lizards;
+    public int length;
+    
+	public Track(Lizard[] lizards, int length){
+    this.lizards = lizards;
+    this.track = new int[lizards.length];
+    this.length = length;
 	}
 	
 	public void nullTrack(){
-		for (int line=0; line<20; line++)
-			for (int column=0; column<5; column++)
-				track[line][column]=0;
-	}
+		for (int line=0; line < track.length; line++)
+				track[line]=0;
+	}    
 	
 	public void showTrack(){
 		System.out.println();
-			for (int line=0; line<21; line++){
-				if(track[line][0]==-17){
-                    System.out.print(color1);
-                }
-				if(track[line][1]==-13){
-                    System.out.print(color2);
-                }
-				if(track[line][2]==1){
-                    System.out.print(color3);
-                }
-				if(track[line][3]==13){
-                    System.out.print(color4);
-                }
-				if(track[line][4]==17){
-                    System.out.print(color5);
-                }
-			}
+    for (int i = 0; i < lizards.length; i++) {
+      System.out.print(lizards[i].getColor() + "\t");
+    }
+    System.out.println();
+    for (int line = 0; line < length; line++){
+      for (int position = 0; position < track.length; position++) {
+        System.out.print((line == position ? "o" : "x") + "\t");
+      }
+    }
 	}
+  public Lizard advLizard(){
+    int maxDistance = 0;
+    int furthestLizardIndex = -1;
+    for (int i=0; i<track.length; i++){
+   	 		if (track[i]>maxDistance)
+          furthestLizardIndex=i;
+    }
+    return lizards[furthestLizardIndex];
+  }
 	
-	public void setPosition(String color){
-		for (int i=1; i<round; i++) 
-		if (color==color1){
-			int k = lizard1.run();
-			track[k][0] = -17;
-		} else if (color==color2){
-			int z = lizard2.run();
-			track[z][1] = -13;
-		} else if (color==color3){
-			int q = lizard3.run();
-			track[q][2] = 1;
-		} else if (color==color4){
-			int w = lizard4.run();
-			track[w][3] = 13;
-		} else if (color==color5){
-			int x = lizard5.run();
-			track[x][4]=17;
-		}
-		
+	public void setPosition(){
+    for (int i=0; i<track.length; i++){
+      	int k=lizards[i].run();
+      	track[i]+=k;
+    }     
 		showTrack();
 	}
-	
+    
 	public boolean completeTrack(){
-		for (int i=0; i<5; i++){
-			if (track[20][i]==0){
-				return false;
+		for (int i=0; i<track.length; i++){
+			if (track[i]>=length){
+				return true;
 			}
 		} 
-		return true;
+		return false;
 	} 
-	
-	public int checkColumns(){
-		for (int column=0; column<5; column++){
-			if (track[20][0]==-17){
-				return -17;
-			}
-			if (track[20][1]==-13){
-				return -13;
-			}
-			if (track[20][2]==1){
-				return 1;
-			}
-			if (track[20][3]==13){
-				return 13;
-			}
-			if (track[20][4]==17){
-				return 17;
-			}
-		}
-		return 0;
-	}
 }
