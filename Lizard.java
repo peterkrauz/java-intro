@@ -1,22 +1,21 @@
 package quonadrensal;
 import java.util.Random;
 
-public abstract class Lizard {
-	String color;
-	public String lizard;
-	Random rand = new Random();
+public class Lizard {
+	private String color;
+	private Random rand = new Random();
 	
 	public Lizard(String color){ 
-		this.lizard = color;
+		this.color = color;
 		System.out.println(color + " lizard created!");
 	}
 	
 	public int run(){
-		int k = ((rand.nextInt(5))+1); 
-		return k;
+		return rand.nextInt(5) + 1;
 	}
 	
-	public void setColor(String color){ // eu criei esse método porque o construtor da linha 10
-		this.lizard = color;			// não tava sendo reconhecido no startLizards() do Race.java
-	}
+  public String getColor() {
+    return color;
+  }
 }
+
