@@ -18,8 +18,8 @@ public class Track {
 	public void showTrack(){
 		System.out.println();
 		for (int i = 0; i<  lizards.length; i++) {
-			System.out.print(lizards[i].getColor() + "\t");
-			System.out.print("");
+			System.out.print(lizards[i].getColor() +"("+track[i]+")"+"\t");
+			//System.out.print(track[i]+"\t");
 		}
 		System.out.println();
 		for (int line = 0; line < length; line++){
