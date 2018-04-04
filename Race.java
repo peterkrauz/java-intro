@@ -1,5 +1,4 @@
 package quonadrensal;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,12 +9,12 @@ public class Race {
 	
 	public Race(){
 		Lizard[] lizards = startLizards();
-		Track track = new Track(lizards, 20);
+		track = new Track(lizards, 20);
 		track.nullTrack();
 		while(play()) {
-			System.out.println("Waiting for user input.\n\tPlease, type for the next round.");
-      	round++;
-    }
+			System.out.println("Waiting for user input.\n\tPlease, type.");
+			round++;
+		}
 	}
 	
 	public Lizard[] startLizards(){
@@ -42,14 +41,14 @@ public class Race {
 		String color = s.nextLine();
     if (!check(validColors, color)) {
       System.out.println("Invalid color.");
-      return null;
+      return new Lizard("White");
     } else {
       return new Lizard(color);
     }
   }
   
 	public boolean play(){
-		if (track.completeTrack()){
+		if ((track.isCompleteTrack())==true){
 			System.out.println("Game over."+track.advLizard().getColor()+" lizard won the game.");
 			return false;
 		} else {
