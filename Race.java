@@ -1,4 +1,3 @@
-package quonadrensal;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,7 +11,8 @@ public class Race {
 		track = new Track(lizards, 20);
 		track.nullTrack();
 		while(play()) {
-			System.out.println("Waiting for user input.\n\tPlease, type.");
+			//System.out.println("Waiting for user input.\nPlease, type.");
+			System.out.println("The round is "+round);
 			round++;
 		}
 	}
@@ -41,7 +41,7 @@ public class Race {
 		String color = s.nextLine();
     if (!check(validColors, color)) {
       System.out.println("Invalid color.");
-      return new Lizard("White");
+      return new Lizard("Rogue");
     } else {
       return new Lizard(color);
     }
@@ -49,13 +49,15 @@ public class Race {
   
 	public boolean play(){
 		if ((track.isCompleteTrack())==true){
-			System.out.println("Game over."+track.advLizard().getColor()+" lizard won the game.");
+			System.out.println("Game over. "+track.advLizard().getColor()+" lizard won the game.");
 			return false;
-		} else {
+		}
+		System.out.println("Waiting for user input.\nPlease, type yee.");
+		String input = s.nextLine();
+		if (input=="yee"){}
 			track.setPosition();
 			return true;
 		}
-	}
 	
 	private static boolean check(ArrayList<String> colors, String color) {
 		for(String s : colors)
