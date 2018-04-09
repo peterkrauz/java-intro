@@ -12,7 +12,7 @@ public class Race {
 		track.nullTrack();
 		while(play()) {
 			//System.out.println("Waiting for user input.\nPlease, type.");
-			System.out.println("The round is "+round);
+			System.out.println("T'was the result of round "+round);
 			round++;
 		}
 	}
