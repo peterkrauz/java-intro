@@ -18,13 +18,13 @@ public class Track {
 	public void showTrack(){
 		System.out.println();
 		for (int i = 0; i<  lizards.length; i++) {
-			System.out.print(lizards[i].getColor() +"("+track[i]+")"+"\t");
+			System.out.print(lizards[i].getColor() + "(" +track[i]+ ")");
 			//System.out.print(track[i]+"\t");
 		}
 		System.out.println();
-		for (int line = 0; line < length; line++){
+		for (int line = 0; line < 2; line++){
 			for (int column = 0; column < track.length; column++) {
-				System.out.print((line == column ? "  o" : "  x") + "\t");
+				System.out.print((line == column ? "    o ": "    x ") + "\t");
 			}
 			System.out.println("\n");
 		}
