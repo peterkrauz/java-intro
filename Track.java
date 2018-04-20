@@ -23,7 +23,7 @@ public class Track {
 		System.out.println();
 		for (int line = 0; line < length; line++){
 			for (int column = 0; column < track.length; column++) {
-				System.out.print((line==track[column]?"    o  ":"    x  ")+"\t");
+				System.out.print((line==track[column]?"    0  ":"    ^  ")+"\t");
 				//System.out.print((line == column ? "    o  ": "    x  ") + "\t");
 			}
 			System.out.println("\n");
