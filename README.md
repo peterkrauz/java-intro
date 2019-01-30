@@ -1,2 +1,2 @@
 # sohqualidade
-Repo pros trampo do 1º semestre
+só bagaça do 1º semestre
